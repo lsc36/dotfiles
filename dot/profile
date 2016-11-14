@@ -20,3 +20,8 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
+
+# local overrides
+if [ -f "$HOME/.profile.local" ]; then
+	. "$HOME/.profile.local"
+fi
