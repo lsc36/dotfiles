@@ -1,0 +1,38 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'Valloric/YouCompleteMe'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
+source $VIMRUNTIME/macros/matchit.vim
+
+syntax on
+set autoindent
+set backspace=2
+set cindent
+set colorcolumn=+1
+set completeopt=menu,menuone
+set cursorline
+set incsearch
+set laststatus=2
+set mouse=a
+set nobackup
+set noswapfile
+set number
+set showmatch
+set tabpagemax=99
+set textwidth=80
+set wildmode=longest,list,full
+
+set et sts=4 sw=4
+autocmd filetype asm set noet sts=8 sw=8
+autocmd filetype sh set noet sts=8 sw=8
+
+colorscheme elflord
+highlight colorcolumn ctermbg=236
+highlight cursorline cterm=none ctermbg=236
+
+let g:airline#extensions#tabline#enabled = 1
