@@ -2,7 +2,10 @@
 repo_root=`realpath $(dirname $0)`
 
 git_prompt_sh=$repo_root/dot/git-prompt.sh
-[ ! -f "$git_prompt_sh" ] && curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > $git_prompt_sh
+if [ ! -f "$git_prompt_sh" ]; then
+	echo "Downloading git-prompt.sh"
+	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > $git_prompt_sh
+fi
 
 for i in `ls $repo_root/dot`; do
 	src=$repo_root/dot/$i
