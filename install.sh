@@ -22,5 +22,4 @@ for i in `ls $repo_root/dot`; do
 	ln -s $src $dst
 done
 
-echo "Installing vim plugins"
-vim -c PlugUpdate
+echo "Run \`vim -c PlugUpdate\` to install vim plugins."
