@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'Valloric/YouCompleteMe'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
+Plug 'tomasr/molokai'
 Plug 'tpope/vim-fugitive'
 
 call plug#end()
@@ -32,9 +33,7 @@ set et sts=4 sw=4
 autocmd filetype asm set noet sts=8 sw=8
 autocmd filetype sh set noet sts=8 sw=8
 
-colorscheme elflord
-highlight colorcolumn ctermbg=236
-highlight cursorline cterm=none ctermbg=236
+colorscheme molokai
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
