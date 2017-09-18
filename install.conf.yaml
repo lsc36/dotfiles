@@ -1,0 +1,16 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.bashrc: dot/bashrc
+    ~/.profile: dot/profile
+    ~/.tmux.conf: dot/tmux.conf
+    ~/.vimrc: dot/vimrc
+
+- shell:
+    -
+      description: Downloading git-prompt.sh if not exist
+      command: '[ ! -f ~/.git-prompt.sh ] && curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > ~/.git-prompt.sh || true'
