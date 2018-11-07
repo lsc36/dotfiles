@@ -2,14 +2,20 @@ if filereadable($HOME . "/.vimrc.pre")
     source $HOME/.vimrc.pre
 endif
 
+if !exists("vimplug_list")
+    let vimplug_list = [
+        \'Valloric/YouCompleteMe',
+        \'bling/vim-airline',
+        \'hanhanW/molokai',
+        \'scrooloose/nerdtree',
+        \'tpope/vim-fugitive',
+        \]
+endif
+
 call plug#begin('~/.vim/plugged')
-
-Plug 'Valloric/YouCompleteMe'
-Plug 'bling/vim-airline'
-Plug 'hanhanW/molokai'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-fugitive'
-
+for plug in vimplug_list
+    Plug plug
+endfor
 call plug#end()
 
 source $VIMRUNTIME/macros/matchit.vim
