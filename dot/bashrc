@@ -114,6 +114,14 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+prepend_PATH() {
+	export PATH="$1:$PATH"
+}
+
+append_PATH() {
+	export PATH="$PATH:$1"
+}
+
 # local overrides
 if [ -f "$HOME/.bashrc.local" ]; then
 	. "$HOME/.bashrc.local"
