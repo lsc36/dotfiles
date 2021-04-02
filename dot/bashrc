@@ -116,11 +116,11 @@ if ! shopt -oq posix; then
 fi
 
 prepend_PATH() {
-	export PATH="$1:$PATH"
+	[ -z "$BASHRC_PATH_FREEZED" ] && export PATH="$1:$PATH"
 }
 
 append_PATH() {
-	export PATH="$PATH:$1"
+	[ -z "$BASHRC_PATH_FREEZED" ] && export PATH="$PATH:$1"
 }
 
 # fzf
@@ -144,3 +144,5 @@ fi
 if [ -d "$HOME/.local/bin" ]; then
 	prepend_PATH "$HOME/.local/bin"
 fi
+
+export BASHRC_PATH_FREEZED=1
